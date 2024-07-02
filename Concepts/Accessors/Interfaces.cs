@@ -1,23 +1,25 @@
 ﻿namespace Concepts.Accessors;
 
-public class Interfaces(List<IMoveable> moveables)
+public class Interfaces(List<IMovable> movables)
 {
     public void Run()
     {
-        var car = moveables.Find(x => x.GetType() == typeof(Car));
+        var car = movables.Find(x => x.GetType() == typeof(Car));
         car?.Move(80);
 
-        var airplane = moveables.Find(x => x.GetType() == typeof(Airplane));
+        var airplane = movables.Find(x => x.GetType() == typeof(Airplane));
         airplane?.Move(950);
     }
 }
 
-public interface IMoveable
+// Cannot be instantiated
+public interface IMovable
 {
+    // Declares contracts without implementation
     void Move(int speed);
 }
 
-public class Car : IMoveable
+public class Car : IMovable
 {
     public void Move(int speed)
     {
@@ -25,7 +27,7 @@ public class Car : IMoveable
     }
 }
 
-public class Airplane : IMoveable
+public class Airplane : IMovable
 {
     public void Move(int speed)
     {

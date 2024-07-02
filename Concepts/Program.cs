@@ -2,6 +2,6 @@
 
 Abstracts.Run();
 
-List<IMoveable> moveables = [new Car(), new Airplane()];
+List<IMovable> moveables = [new Car(), new Airplane()];
 var interfaces = new Interfaces(moveables);
 interfaces.Run();
